@@ -10,19 +10,25 @@ import java.net.*;
 public class TcpSocket {
 
     public static void main(String[] args) throws IOException, InterruptedException {
-        SocketAddress addr = new InetSocketAddress(InetAddress.getByName("10.10.0.210"), 8080);
+        SocketAddress addr = new InetSocketAddress(InetAddress.getByName("10.10.0.10"), 8080);
         String get = "GET /api/rest/submit?temp=20&humid=23\r\n\r\n";
         String guic = "GET /api/rest/guice\r\n\r\n";
+        String post = "POST /api/rest/submit HTTP/1.1\n" +
+                "Host: 10.10.0.10:8080\n" +
+                "temp: 22\n" +
+                "humid: 34\r\n\r\n";
 
 
+        /*
         for (int i = 0; i < 10; i++) {
-            Socket socket = connectAndSend(addr, get);
+            Socket socket = connectAndSend(addr, post);
             Thread.sleep(3000);
             InputStream is = socket.getInputStream();
             DataInputStream dis = new DataInputStream(is);
             socketRead(dis);
             socket.close();
-        }
+        }*/
+        System.out.println(post.length());
 
         System.out.println("Guice");
         Socket socket = connectAndSend(addr, guic);

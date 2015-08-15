@@ -21,8 +21,8 @@ public class AltarisRESTService {
 
     @GET
     @Path("submit")
-    public Response submitData(@QueryParam("temp") String temperature, @QueryParam("humid") String humidity) {
-        String res = "Temperature: " + temperature + "ºC  |  Humidity: " + humidity + "%\n";
+    public Response submitData(@QueryParam("auth") String auth_id, @QueryParam("id") String module_id, @QueryParam("temp") String temperature, @QueryParam("humid") String humidity) {
+        String res = "Auth Key: " + auth_id + " | Module ID: " + "0x" + Integer.toHexString(Integer.valueOf(module_id)).toUpperCase() + " | Temperature: " + temperature + "ºC  |  Humidity: " + humidity + "%\n";
         log.info(res);
         dao.add(res);
         return Response.status(200).entity(res).build();
@@ -39,14 +39,7 @@ public class AltarisRESTService {
     }
 
     @GET
-    @Path("hello")
-    @Produces(MediaType.TEXT_PLAIN)
-    public String hello() {
-        return "Hello!";
-    }
-
-    @GET
-    @Path("guice")
+    @Path("list")
     @Produces(MediaType.TEXT_PLAIN)
     public String guice() {
         StringBuilder sb = new StringBuilder();
