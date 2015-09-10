@@ -3,23 +3,11 @@
 require('harmonize')();
 var gulp = require('gulp'),
     gutil = require("gulp-util"),
-    watch = require('gulp-watch'),
-    prefixer = require('gulp-autoprefixer'),
-    uglify = require('gulp-uglify'),
-    sass = require('gulp-sass'),
-    sourcemaps = require('gulp-sourcemaps'),
     rigger = require('gulp-rigger'),
-    cssmin = require('gulp-minify-css'),
-    imagemin = require('gulp-imagemin'),
     replace = require('gulp-replace'),
-    pngquant = require('imagemin-pngquant'),
-    del = require('rimraf'),   // for clean task
-    eslint = require('gulp-eslint'),
-    jest = require('jest-cli'),
     WebpackDevServer = require("webpack-dev-server"),
     webpack = require('webpack'),
     webpackConfigFunc = require("./webpack.config.js"),
-    karma = require('karma').server,
     expressHelper = require("./start-express.js");
 
 gulp.task("webpack:build", function (callback) {
@@ -99,18 +87,6 @@ gulp.task("webpack-dev-server", function (callback) {
         });
 });
 
-gulp.task("lint", function () {
-    return gulp.src([app.src.path + '/**/*.jsx'])
-        .pipe(eslint())
-        .pipe(eslint.format())
-        .pipe(eslint.failOnError());
-});
-gulp.task('test', function () {
-    jest.runCLI({config: jestConfig}, ".", function () {
-        console.log('done');
-    });
-});
-
 
 gulp.task('webpack', ['webpack:build-dev', 'webpack-dev-server']);
 
@@ -135,12 +111,6 @@ var prodProps = {
     chunk_filename: "[chunkhash].js",
     extract_text_name: "[contenthash].css"
 
-};
-
-var jestConfig = {
-    rootDir: 'src/main/webapp',
-    "scriptPreprocessor": "preprocessor.js",
-    "unmockedModulePathPatterns": ["node_modules/react"]
 };
 
 var app = {

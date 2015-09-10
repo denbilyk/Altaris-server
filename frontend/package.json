@@ -7,28 +7,20 @@
   "version": "0.0.1",
   "description": "An example module to illustrate the usage of a package.json",
   "dependencies": {
-    "bootstrap-sass": "~3.3.5",
-    "bootstrap-sass-loader": "^1.0.8",
     "file-loader": "^0.8.4",
     "flux": "^2.0.1",
     "superagent": "~1.3.0",
     "jquery": "~2.1.3",
     "react": "~0.13.3",
-    "react-bootstrap": "^0.25.0",
     "react-router": "^0.13.3",
-    "url-loader": "^0.5.6",
-    "typeahead.js": "^0.11.1"
+    "url-loader": "^0.5.6"
   },
   "devDependencies": {
     "autoprefixer-core": "^5.2.0",
     "autoprefixer-loader": "*",
     "babel-eslint": "^3.1.5",
-    "babel-jest": "^5.2.0",
     "babel-loader": "*",
     "body-parser": "^1.13.3",
-    "bootstrap-webpack": "0.0.4",
-    "browser-sync": "^2.2.3",
-    "chai": "^2.3.0",
     "css-loader": "*",
     "csswring": "3.0.5",
     "eslint-plugin-react": "^2.3.0",
@@ -52,32 +44,13 @@
     "harmonize": "^1.4.2",
     "imagemin-pngquant": "^4.0.0",
     "imports-loader": "^0.6.3",
-    "jest-cli": "^0.4.5",
     "jsx-loader": "~0.13.2",
-    "karma": "^0.12.35",
-    "karma-chrome-launcher": "^0.1.12",
-    "karma-cli": "^0.0.4",
-    "karma-mocha": "^0.1.10",
-    "karma-sourcemap-loader": "^0.3.5",
-    "karma-webpack": "^1.5.1",
     "less-loader": "~0.6.2",
-    "microevent": "^1.0.0",
     "postcss-loader": "^0.4.4",
     "react-tools": "*",
-    "rimraf": "^2.3.1",
     "sass-loader": "~2.0.1",
     "showdown": "latest",
     "style-loader": "^0.12.2",
-    "webpack": "~1.10.1",
-    "webpack-dev-server": "~1.10.1"
-  },
-  "jest": {
-    "scriptPreprocessor": "<rootDir>/preprocessor.js",
-    "unmockedModulePathPatterns": [
-      "<rootDir>/node_modules/react"
-    ]
-  },
-  "scripts": {
-    "test": "jest"
+    "webpack": "~1.10.1", "webpack-dev-server": "~1.10.1"
   }
 }

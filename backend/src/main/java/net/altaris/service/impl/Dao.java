@@ -1,24 +1,40 @@
 package net.altaris.service.impl;
 
+import lombok.extern.slf4j.Slf4j;
+import net.altaris.entity.Data;
+import net.altaris.repository.DataRepository;
 import net.altaris.service.IDao;
-import org.springframework.stereotype.Component;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.UUID;
 
 /**
  * @author denis.bilyk.
  */
-@Component
+@Slf4j
+@Service("dataService")
 public class Dao implements IDao {
-    private static final List<String> list = new ArrayList<String>();
 
-    public void add(String row) {
-        list.add(row);
+    @Autowired
+    @Qualifier("dataRepository")
+    private DataRepository dataRepository;
+
+    public boolean add(String row) {
+        try {
+            dataRepository.persist(new Data(UUID.randomUUID(), row));
+            return true;
+        } catch (Exception e) {
+            log.error("ERROR SAVING DATA: " + e.getMessage(), e);
+            return false;
+        }
     }
 
     public List<String> getAll() {
-        return Collections.unmodifiableList(list);
+        return Collections.unmodifiableList(new ArrayList<>());
     }
 }

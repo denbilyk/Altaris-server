@@ -1,5 +1,6 @@
 package net.altaris;
 
+import net.altaris.config.JpaConfig;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
@@ -17,7 +18,7 @@ public class Application extends SpringBootServletInitializer {
     }
 
     public static void main(String[] args) throws Exception {
-        SpringApplication.run(Application.class, args);
+        SpringApplication.run(new Class<?>[]{Application.class, JpaConfig.class}, args);
     }
 
 }

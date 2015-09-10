@@ -1,17 +1,1 @@
 
-
-/*==========  Icons ==========*/
-/*.sprite { background: url('../img/sprite.png') no-repeat top left; height: 99px;  }*/
-.sprite.allBrochures { background-position: 0 0; width: 101px; height: 109px; }
-.sprite.book { background-position: 0 -119px; width: 199px; height: 170px; }
-.sprite.info { background-position: 0 -299px; width: 103px; height: 95px; }
-.sprite.kaufda { background-position: 0 -404px; width: 233px; height: 216px; }
-.sprite.map { background-position: 0 -630px; width: 105px; }
-.sprite.mult { background-position: 0 -739px; width: 227px; height: 210px; }
-.sprite.plus { background-position: 0 -959px; width: 213px; height: 224px; }
-.sprite.print { background-position: 0 -1193px; width: 86px; height: 118px; }
-.sprite.share { background-position: 0 -1321px; width: 84px; }
-.sprite.star { background-position: 0 -1430px; width: 172px; height: 177px; }
-.sprite.zoomMinus { background-position: 0 -1617px; width: 110px; }
-.sprite.zoomPlus { background-position: 0 -1726px; width: 93px; height: 93px; }
-
