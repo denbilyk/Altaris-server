@@ -30,8 +30,20 @@ public class HostCollectorController {
         return "submitted";
     }
 
+    @RequestMapping(value = "/api/raw", method = RequestMethod.GET)
+    public String submit_raw(
+            @RequestParam("auth") String auth_id,
+            @RequestParam("raw") String raw) {
+        String res =
+                "Auth Key: " + auth_id +
+                        " | Raw Data: " + raw + " \n";
+        log.info(res);
+        dao.add(res);
+        return "submitted";
+    }
+
     @RequestMapping(value = "/api/list", method = RequestMethod.GET)
-    public String list(){
+    public String list() {
         StringBuilder sb = new StringBuilder();
         for (String s : dao.getAll()) {
             sb.append(s);

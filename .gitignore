@@ -11,6 +11,7 @@ Release
 *.iws
 *.iml
 .idea
+*.isw
 *.ids
 target/
 node/

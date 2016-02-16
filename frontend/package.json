@@ -51,6 +51,9 @@
     "sass-loader": "~2.0.1",
     "showdown": "latest",
     "style-loader": "^0.12.2",
-    "webpack": "~1.10.1", "webpack-dev-server": "~1.10.1"
+    "webpack": "~1.10.1",
+    "webpack-dev-server": "~1.10.1",
+    "material-ui":"*",
+    "react-tap-event-plugin":"*"
   }
 }
